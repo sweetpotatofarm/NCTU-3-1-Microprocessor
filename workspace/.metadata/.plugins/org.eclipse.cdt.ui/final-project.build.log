@@ -1,0 +1,6 @@
+18:46:18 **** Incremental Build of configuration Debug for project final-project ****
+make -j3 all 
+make: Nothing to be done for `all'.
+
+18:46:18 Build Finished (took 155ms)
+

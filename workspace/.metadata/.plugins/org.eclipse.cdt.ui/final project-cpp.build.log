@@ -1,0 +1,18 @@
+16:18:37 **** Incremental Build of configuration Debug for project final project-cpp ****
+make -j3 all 
+Building file: ../src/main.cpp
+Invoking: MCU G++ Compiler
+/Users/hsiaochuhao/Documents/workspace/final project-cpp/Debug
+arm-none-eabi-g++ -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32 -DSTM32L4 -DSTM32L476RGTx -DNUCLEO_L476RG -DDEBUG -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fno-exceptions -fno-rtti -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.cpp"
+Finished building: ../src/main.cpp
+ 
+Building target: final project-cpp.elf
+Invoking: MCU G++ Linker
+arm-none-eabi-g++ -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -T"/Users/hsiaochuhao/Documents/workspace/final project-cpp/LinkerScript.ld" -Wl,-Map=output.map -Wl,--gc-sections -fno-exceptions -fno-rtti -o "final project-cpp.elf" @"objects.list"   -lm
+startup/startup_stm32.o: In function `LoopFillZerobss':
+/Users/hsiaochuhao/Documents/workspace/final project-cpp/Debug/../startup/startup_stm32.s:83: undefined reference to `main'
+collect2: error: ld returned 1 exit status
+make: *** [final project-cpp.elf] Error 1
+
+16:18:38 Build Finished (took 1s.219ms)
+

@@ -1,0 +1,28 @@
+16:16:47 **** Incremental Build of configuration Debug for project final project-HAL ****
+make -j3 all 
+Building file: ../src/main.cpp
+Invoking: MCU G++ Compiler
+Building file: ../Utilities/STM32L4xx_Nucleo/stm32l4xx_nucleo.c
+Building file: ../HAL_Driver/Src/Legacy/stm32l4xx_hal_can.c
+/Users/hsiaochuhao/Documents/workspace/final project-HAL/Debug
+arm-none-eabi-g++ -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32 -DSTM32L4 -DSTM32L476RGTx -DNUCLEO_L476RG -DDEBUG -DSTM32L476xx -DUSE_HAL_DRIVER -I"/Users/hsiaochuhao/Documents/workspace/final project-HAL/HAL_Driver/Inc/Legacy" -I"/Users/hsiaochuhao/Documents/workspace/final project-HAL/inc" -I"/Users/hsiaochuhao/Documents/workspace/final project-HAL/CMSIS/device" -I"/Users/hsiaochuhao/Documents/workspace/final project-HAL/CMSIS/core" -I"/Users/hsiaochuhao/Documents/workspace/final project-HAL/HAL_Driver/Inc" -I"/Users/hsiaochuhao/Documents/workspace/final project-HAL/Utilities/STM32L4xx_Nucleo" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fno-exceptions -fno-rtti -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.cpp"
+Invoking: MCU GCC Compiler
+Invoking: MCU GCC Compiler
+/Users/hsiaochuhao/Documents/workspace/final project-HAL/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32 -DSTM32L4 -DSTM32L476RGTx -DNUCLEO_L476RG -DDEBUG -DSTM32L476xx -DUSE_HAL_DRIVER -I"/Users/hsiaochuhao/Documents/workspace/final project-HAL/HAL_Driver/Inc/Legacy" -I"/Users/hsiaochuhao/Documents/workspace/final project-HAL/HAL_Driver/Inc" -I"/Users/hsiaochuhao/Documents/workspace/final project-HAL/inc" -I"/Users/hsiaochuhao/Documents/workspace/final project-HAL/CMSIS/device" -I"/Users/hsiaochuhao/Documents/workspace/final project-HAL/CMSIS/core" -I"/Users/hsiaochuhao/Documents/workspace/final project-HAL/HAL_Driver/Inc" -I"/Users/hsiaochuhao/Documents/workspace/final project-HAL/Utilities/STM32L4xx_Nucleo" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"HAL_Driver/Src/Legacy/stm32l4xx_hal_can.d" -MT"HAL_Driver/Src/Legacy/stm32l4xx_hal_can.o" -o "HAL_Driver/Src/Legacy/stm32l4xx_hal_can.o" "../HAL_Driver/Src/Legacy/stm32l4xx_hal_can.c"
+/Users/hsiaochuhao/Documents/workspace/final project-HAL/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32 -DSTM32L4 -DSTM32L476RGTx -DNUCLEO_L476RG -DDEBUG -DSTM32L476xx -DUSE_HAL_DRIVER -I"/Users/hsiaochuhao/Documents/workspace/final project-HAL/HAL_Driver/Inc/Legacy" -I"/Users/hsiaochuhao/Documents/workspace/final project-HAL/HAL_Driver/Inc" -I"/Users/hsiaochuhao/Documents/workspace/final project-HAL/inc" -I"/Users/hsiaochuhao/Documents/workspace/final project-HAL/CMSIS/device" -I"/Users/hsiaochuhao/Documents/workspace/final project-HAL/CMSIS/core" -I"/Users/hsiaochuhao/Documents/workspace/final project-HAL/HAL_Driver/Inc" -I"/Users/hsiaochuhao/Documents/workspace/final project-HAL/Utilities/STM32L4xx_Nucleo" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"Utilities/STM32L4xx_Nucleo/stm32l4xx_nucleo.d" -MT"Utilities/STM32L4xx_Nucleo/stm32l4xx_nucleo.o" -o "Utilities/STM32L4xx_Nucleo/stm32l4xx_nucleo.o" "../Utilities/STM32L4xx_Nucleo/stm32l4xx_nucleo.c"
+In file included from ../src/main.cpp:12:0:
+/Users/hsiaochuhao/Documents/workspace/final project-HAL/inc/hx711.h:14:10: fatal error: stm32f4xx_hal.h: No such file or directory
+ #include "stm32f4xx_hal.h"
+          ^~~~~~~~~~~~~~~~~
+compilation terminated.
+make: *** [src/main.o] Error 1
+make: *** Waiting for unfinished jobs....
+Finished building: ../HAL_Driver/Src/Legacy/stm32l4xx_hal_can.c
+ 
+Finished building: ../Utilities/STM32L4xx_Nucleo/stm32l4xx_nucleo.c
+ 
+
+16:16:49 Build Finished (took 1s.825ms)
+

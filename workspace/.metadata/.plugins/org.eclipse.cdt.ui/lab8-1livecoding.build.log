@@ -1,0 +1,6 @@
+15:38:45 **** Incremental Build of configuration Debug for project lab8-1livecoding ****
+make -j3 all 
+make: Nothing to be done for `all'.
+
+15:38:45 Build Finished (took 178ms)
+

@@ -1,0 +1,23 @@
+15:38:42 **** Incremental Build of configuration Debug for project lab5-1 ****
+make -j3 all 
+Building file: ../src/max7219_init.s
+Invoking: MCU GCC Assembler
+/Users/hsiaochuhao/Documents/workspace/lab5-1/Debug
+arm-none-eabi-as -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -g -o "src/max7219_init.o" "../src/max7219_init.s"
+Finished building: ../src/max7219_init.s
+ 
+Building target: lab5-1.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -T"/Users/hsiaochuhao/Documents/workspace/lab5-1/LinkerScript.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "lab5-1.elf" @"objects.list"   -lm
+Finished building target: lab5-1.elf
+ 
+/Library/Developer/CommandLineTools/usr/bin/make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "lab5-1.elf" "lab5-1.bin"
+arm-none-eabi-size "lab5-1.elf"
+   text	   data	    bss	    dec	    hex	filename
+   1304	   1088	   1088	   3480	    d98	lab5-1.elf
+ 
+
+15:38:42 Build Finished (took 281ms)
+

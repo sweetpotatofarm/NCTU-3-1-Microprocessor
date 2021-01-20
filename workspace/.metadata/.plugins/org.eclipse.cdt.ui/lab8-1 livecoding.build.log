@@ -1,0 +1,27 @@
+19:03:09 **** Incremental Build of configuration Debug for project lab8-1 livecoding ****
+make -j3 all 
+Building file: ../src/main.c
+Invoking: MCU GCC Compiler
+/Users/hsiaochuhao/Documents/workspace/lab8-1 livecoding/Debug
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DSTM32 -DSTM32L4 -DSTM32L476RGTx -DNUCLEO_L476RG -DDEBUG -I"/Users/hsiaochuhao/Documents/workspace/lab8-1 livecoding/inc" -O0 -g3 -Wall -fmessage-length=0 -ffunction-sections -c -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+../src/main.c: In function 'UART_Transmit':
+../src/main.c:47:14: warning: pointer targets in initialization differ in signedness [-Wpointer-sign]
+  char *str = arr;
+              ^~~
+Finished building: ../src/main.c
+ 
+Building target: lab8-1 livecoding.elf
+Invoking: MCU GCC Linker
+arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 -T"/Users/hsiaochuhao/Documents/workspace/lab8-1 livecoding/LinkerScript.ld" -Wl,-Map=output.map -Wl,--gc-sections -o "lab8-1 livecoding.elf" @"objects.list"   -lm
+Finished building target: lab8-1 livecoding.elf
+ 
+/Library/Developer/CommandLineTools/usr/bin/make --no-print-directory post-build
+Generating binary and Printing size information:
+arm-none-eabi-objcopy -O binary "lab8-1 livecoding.elf" "lab8-1 livecoding.bin"
+arm-none-eabi-size "lab8-1 livecoding.elf"
+   text	   data	    bss	    dec	    hex	filename
+   1584	   1152	   1088	   3824	    ef0	lab8-1 livecoding.elf
+ 
+
+19:03:10 Build Finished (took 817ms)
+

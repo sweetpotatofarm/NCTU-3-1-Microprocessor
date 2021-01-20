@@ -1,0 +1,84 @@
+#include "stm32l476xx.h"
+
+extern void GPIO_init();
+extern void max7219_init();
+extern void DisplayLED(int n);
+void Delay1sUnder4MHz();
+void Set_HCLK(int freq);
+
+int freq[] = {1, 6, 10, 16, 40};
+
+int main(){
+	// Do initializations.
+	GPIO_init();
+	max7219_init();
+
+	int freqNum = 0;
+	int n;
+	for(;;){
+		// change LED state
+		if(n == 1)
+			n=0;
+		else
+			n=1;
+		DisplayLED(n);
+		Delay1sUnder4MHz();
+		// change HCLK if button pressed
+		if(pressed() == 1){
+			freqNum = ((freqNum+1)%5);
+			set_HCLK(freqNum);
+		}
+	}
+}
+
+void Set_HCLK(int freqNum){
+	// 1. change to the temporary clock source if needed
+	// 2. set the target clock source
+	// 3. change to the target clock source
+	//Temporarily use ths HSI before turning off PLL
+	RCC->CR |= RCC_CR_HSION;
+	while((RCC->CR & RCC_CR_HSIRDY) == 0);
+
+	RCC->CFGR = 0x00000000; //CFGR reset value
+	//PLL OFF (bit24)
+	RCC->CR  &= 0xFEFFFFFF;
+	while (RCC->CR & 0x02000000);
+
+	//Configure CFGR
+	RCC->PLLCFGR &= 0x00000001; //off all except the MSI clock source
+	RCC->PLLCFGR |= freq[freqNum];
+
+	//PLL ON
+	RCC->CR |= RCC_CR_PLLON;
+	while((RCC->CR & RCC_CR_PLLRDY) == 0);
+
+	//Set the main clock source as PLL
+	RCC->CFGR |= RCC_CFGR_SW_PLL;
+	while ((RCC->CFGR & RCC_CFGR_SWS_PLL) != RCC_CFGR_SWS_PLL);
+
+}
+
+void Delay1sUnder4MHz(){
+	for(int i=0; i<200000; i++){
+		//do nothing
+	}
+}
+
+int pressed(){
+	int debounce = 0;
+	int flag = 0;
+	for(int i=0; i<1000; i++){
+		if((GPIOC->IDR & 0b0010000000000000) == 0){
+			debounce++;
+		}
+		else{
+			debounce = 0;
+		}
+		if(debounce > 20){
+			flag = 1;
+			break;
+		}
+	}
+	return flag;
+}
+
